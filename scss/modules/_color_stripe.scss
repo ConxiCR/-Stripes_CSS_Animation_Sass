@@ -1,0 +1,28 @@
+//detallo els diferents colors
+$color-tipografia: #fff;
+$bg-color: #fff;
+//declaro els fons i color de lletra
+.stripes_container{
+    color: $color-tipografia;
+}
+.stripes_content{
+    background-color:$bg-color;
+}
+.stripes_block:before{
+    background: $bg-color;
+}
+//Funció colors de fons dels fills
+$color_stripes:(
+    'color1': #244f75,
+    'color2': #60BFBF,
+    'color3': #8C4B7E,
+    'color4': #F8BB44,
+    'color5': #F24B4B,
+);
+@for $i from 1 to 6{
+   .stripes_content:nth-child(#{$i}){
+      background: map-get($color_stripes , 'color#{$i}'); 
+      animation: motion#{$i} 1s;
+    }
+}
+
